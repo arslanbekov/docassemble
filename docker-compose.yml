@@ -1,0 +1,40 @@
+version: '2'
+
+networks:
+  docassemble:
+
+volumes:
+  docassemble:
+
+services:
+  docassemble:
+    image: "docassemble"
+    user: root
+    restart: always
+    networks:
+      - docassemble
+    ports:
+      - "9180:80"
+      - "9443:443"
+    volumes:
+      - "docassemble:/usr/share/docassemble/backup1"
+    environment:
+      - SERVICE_NAME=docassemble
+      - SERVICE_443_NAME=docassemble
+      - CONTAINERROLE=all
+      - DBPREFIX=postgresql+psycopg2://
+      - DBNAME=docassemble
+      - DBUSER=docassemble
+      - DBPASSWORD=LohMoob8Quievoh4
+      - DBHOST=localhost
+      - USEHTTPS=true
+      - DAHOSTNAME=docassemble.smashdocs.io
+      - USELETSENCRYPT=true
+      - LETSENCRYPTEMAIL=ci@smashdocs.net
+      - S3ENABLE=false
+      - S3ACCESSKEY=
+      - S3SECRETACCESSKEY=
+      - S3BUCKET=
+      - S3REGION=
+      - EC2=false
+      - TIMEZONE=Europe/Kiev
