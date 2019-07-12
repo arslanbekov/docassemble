@@ -1485,7 +1485,7 @@ def as_html(status, url_for, debug, root, validation_rules, field_error, the_pro
                     output += '                  <p><a href="' + server.url_finder(attachment['file']['rtf to docx'], display_filename=attachment['filename'] + '.docx') + '" target="_blank"><i class="fas fa-pencil-alt fa-fw"></i> DOCX</a> (' + word('docx_message') + ')</p>\n'
                 if 'tex' in attachment['valid_formats']:
                     output += '                  <p><a href="' + server.url_finder(attachment['file']['tex'], display_filename=attachment['filename'] + '.tex') + '" target="_blank"><i class="fas fa-pencil-alt fa-fw"></i> LaTeX</a> (' + word('tex_message') + ')</p>\n'
-                output += '                  <p><a href="https://labs.smashdocs.net/api/imports/word/from?url=https://docassemble.smashdocs.io' + server.url_finder(attachment['file']['docx'], display_filename=attachment['filename'] + '.docx') + '" target="_blank"><i class="fas fa-pencil-alt fa-fw"></i>Start Collaboration with SMASHDOCs</a></p>\n'
+                output += '                  <p><a href="https://legal-demo.smashdocs.net/api/imports/word/from?url=https://docassemble.smashdocs.io' + server.url_finder(attachment['file']['docx'], display_filename=attachment['filename'] + '.docx') + '" target="_blank"><i class="fas fa-pencil-alt fa-fw"></i>Start Collaboration with SMASHDOCs</a></p>\n'
                 output += '                </div>\n'
             if show_preview:
                 output += '                <div class="tab-pane" id="dapreview' + str(attachment_index) + '" role="tabpanel" aria-labelledby="dapreview-tab' + str(attachment_index) + '">\n'
